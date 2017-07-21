@@ -3,10 +3,10 @@
 namespace Watson\Breadcrumbs;
 
 use Illuminate\View\View;
-use Illuminate\View\Factory;
+use Illuminate\Contracts\Factory;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
-
+use Illuminate\Contracts\View\Factory as FactoryContract;
 class Renderer
 {
     /**
@@ -22,7 +22,7 @@ class Renderer
      * @param  \Illuminate\View\Factory  $factory
      * @return void
      */
-    public function __construct(Factory $factory)
+    public function __construct(FactoryContract $factory)
     {
         $this->factory = $factory;
     }
